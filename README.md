@@ -91,10 +91,7 @@ A **restaurant** is composed by:
     
 -   Francesinhas: Mega Francesinha, Chicken Francesinha, Omelet francesinha
     
-
-**
 ## Phases
-**
 
 #### The frontend
 
