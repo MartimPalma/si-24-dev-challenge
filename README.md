@@ -55,7 +55,7 @@ A **francesinha** entry is composed by:
     
 -   Price: 10
     
--   Classification: 4,9
+-   Rating: 4,9
     
 -   Ingredients: Ham, Steak, Egg, Cheese, Bacon, Sausage, Bread, Francesinha sauce
     
@@ -83,11 +83,11 @@ A **restaurant** is composed by:
     
 -   Address: Rua das Padeiras 88, 3000-311 Coimbra
     
--   City: Coimbra”
+-   City: Coimbra
     
 -   Country: Portugal
     
--   Classification (1-5 stars): 5.0
+-   Rating (1-5 stars): 5.0
     
 -   Francesinhas: Mega Francesinha, Chicken Francesinha, Omelet francesinha
     
