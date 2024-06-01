@@ -4,6 +4,7 @@
             <?php include_once "./components/cp_intro_registo.php"; ?>
             <!-- Coluna para o formulário -->
             <div class="col-md-6">
+                <h1>Introduz os teus dados</h1>
                 <!-- Formulário de registro -->
                 <form id="registrationForm" action="./scripts/sc_registo.php" method="post" class="needs-validation" novalidate>
                     <div class="mb-3 mt-3">

@@ -6,9 +6,8 @@
         <div class="row">
             <!-- Coluna para o formulário -->
             <div class="col-md-6">
-                <h1>Introduz os teus dados</h1>
+                <h1>Insere os teus dados</h1>
                 <!-- Formulário de login -->
-                <!-- Envia os dados para sc_login.php através do post -->
                 <form id="loginForm" action="./scripts/sc_login.php" method="post" class="needs-validation" novalidate>
                     <div class="mb-3 mt-3">
                         <label for="login" class="form-label">Login:</label>
