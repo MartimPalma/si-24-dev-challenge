@@ -7,7 +7,6 @@
         <!-- Intro -->
         <?php include_once "./components/cp_intro_add_fran.php"; ?>
 
-        <!-- Listar filmes -->
         <div class="row justify-content-center">
             <form class="col-6" action="./scripts/sc_add_fran.php" method="post" class="was-validated">
                 <div class="mb-3 mt-3">

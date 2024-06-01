@@ -1,13 +1,12 @@
 <?php
-include_once "./connections/connection.php";
+    include_once "../connections/connection.php";
 ?>
 
 <section class="sec-filmes pb-5" id="lista-filmes">
     <div class="container px-lg-5 pt-3">
         <!-- Intro -->
-        <?php include_once "./components/cp_intro_add_restaurante.php"; ?>
+        <?php include_once "../components/cp_intro_add_restaurante.php"; ?>
 
-        <!-- Listar filmes -->
         <div class="row justify-content-center">
             <form class="col-6" action="./scripts/restaurante/sc_add_restaurante.php" method="post" class="was-validated">
                 <div class="mb-3 mt-3">
@@ -27,17 +26,17 @@ include_once "./connections/connection.php";
                     <select class="form-control" id="cidade" name="cidade" required>
                         <option value="">Seleciona a cidade</option>
                         <?php
-                        $query = "SELECT nome, id_cidades FROM cidades";
-                        $link = new_db_connection();
-                        $stmt = mysqli_stmt_init($link);
-                        mysqli_stmt_prepare($stmt, $query);
-                        mysqli_stmt_bind_result($stmt, $nome, $id_cidades);
-                        mysqli_stmt_execute($stmt);
-                        while (mysqli_stmt_fetch($stmt)) {
-                            echo '<option value="' . $id_cidades . '">' . $nome . '</option>';
-                        }
-                        mysqli_stmt_close($stmt);
-                        mysqli_close($link);
+                            $query = "SELECT nome, id_cidades FROM cidades";
+                            $link = new_db_connection();
+                            $stmt = mysqli_stmt_init($link);
+                            mysqli_stmt_prepare($stmt, $query);
+                            mysqli_stmt_bind_result($stmt, $nome, $id_cidades);
+                            mysqli_stmt_execute($stmt);
+                            while (mysqli_stmt_fetch($stmt)) {
+                                echo '<option value="' . $id_cidades . '">' . $nome . '</option>';
+                            }
+                            mysqli_stmt_close($stmt);
+                            mysqli_close($link);
                         ?>
                     </select>
                     <div class="valid-feedback">Valid.</div>

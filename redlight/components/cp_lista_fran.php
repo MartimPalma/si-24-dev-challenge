@@ -7,7 +7,6 @@
         <!-- Intro -->
         <?php include_once "./components/cp_intro_fran.php" ?>
 
-        <!-- Listar filmes -->
         <div class="row justify-content-center">
             <?php
 
@@ -138,7 +137,7 @@
                             $previousPage = $_SERVER['HTTP_REFERER'];
                         } else {
                             // Se não estiver definida ou vazia, define a URL de uma página padrão
-                            $previousPage = "francesinha.php";
+                            $previousPage = "fran.php";
                         }
                         ?>
 

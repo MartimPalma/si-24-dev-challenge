@@ -1,32 +1,32 @@
 <?php
-include_once "./connections/connection.php";
+    include_once "./connections/connection.php";
 
-if (isset($_GET['id'])) {
-    $id_restaurantes = $_GET['id'];
+    if (isset($_GET['id'])) {
+        $id_restaurantes = $_GET['id'];
 
-    // Query para obter os dados do restaurante
-    $query = "SELECT nome, endereco, descricao, capa, ref_cidades FROM restaurantes WHERE id_restaurantes = ?";
-    $link = new_db_connection();
-    $stmt = mysqli_stmt_init($link);
+        // Query para obter os dados do restaurante
+        $query = "SELECT nome, endereco, descricao, capa, ref_cidades FROM restaurantes WHERE id_restaurantes = ?";
+        $link = new_db_connection();
+        $stmt = mysqli_stmt_init($link);
 
-    if (mysqli_stmt_prepare($stmt, $query)) {
-        mysqli_stmt_bind_param($stmt, "i", $id_restaurantes);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $nome, $endereco, $descricao, $capa, $ref_cidades);
-        mysqli_stmt_fetch($stmt);
-        mysqli_stmt_close($stmt);
-    } else {
-        echo "Erro ao preparar a query: " . mysqli_error($link);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "i", $id_restaurantes);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $nome, $endereco, $descricao, $capa, $ref_cidades);
+            mysqli_stmt_fetch($stmt);
+            mysqli_stmt_close($stmt);
+        } else {
+            echo "Erro ao preparar a query: " . mysqli_error($link);
+            mysqli_close($link);
+            exit();
+        }
+
+        // Fechar a ligação com a base de dados
         mysqli_close($link);
+    } else {
+        echo "ID do restaurante não especificado.";
         exit();
     }
-
-    // Fechar a ligação com a base de dados
-    mysqli_close($link);
-} else {
-    echo "ID do restaurante não especificado.";
-    exit();
-}
 ?>
 
 <section class="sec-filmes pb-5" id="lista-filmes">
@@ -34,7 +34,7 @@ if (isset($_GET['id'])) {
         <div class="row justify-content-center">
 
             <?php
-            include_once "./components/cp_intro_update_restaurante.php";
+                include_once "./components/cp_intro_update_restaurante.php";
             ?>
 
             <form class="col-6" action="./scripts/restaurante/sc_update_restaurante.php" method="post" enctype="multipart/form-data" class="was-validated">
@@ -66,21 +66,23 @@ if (isset($_GET['id'])) {
                     <select class="form-control" id="cidade" name="cidade" required>
                         <option value="">Seleciona a cidade</option>
                         <?php
-                        $link = new_db_connection();
-                        $query_cidades = "SELECT id_cidades, nome FROM cidades";
-                        $stmt_cidades = mysqli_stmt_init($link);
+                            $link = new_db_connection();
+                            $query_cidades = "SELECT id_cidades, nome FROM cidades";
+                            $stmt_cidades = mysqli_stmt_init($link);
 
-                        if (mysqli_stmt_prepare($stmt_cidades, $query_cidades)) {
-                            mysqli_stmt_execute($stmt_cidades);
-                            mysqli_stmt_bind_result($stmt_cidades, $id_cidades, $nome_cidade);
-                            while (mysqli_stmt_fetch($stmt_cidades)) {
-                                $selected = ($id_cidades == $ref_cidades) ? 'selected' : '';
-                                echo "<option value='$id_cidades' $selected>$nome_cidade</option>";
+                            if (mysqli_stmt_prepare($stmt_cidades, $query_cidades)) {
+                                mysqli_stmt_execute($stmt_cidades);
+                                mysqli_stmt_bind_result($stmt_cidades, $id_cidades, $nome_cidade);
+
+                                while (mysqli_stmt_fetch($stmt_cidades)) {
+                                    $selected = ($id_cidades == $ref_cidades) ? 'selected' : '';
+                                    echo "<option value='$id_cidades' $selected>$nome_cidade</option>";
+                                }
+
+                                mysqli_stmt_close($stmt_cidades);
                             }
-                            mysqli_stmt_close($stmt_cidades);
-                        }
 
-                        mysqli_close($link);
+                            mysqli_close($link);
                         ?>
                     </select>
                     <div class="valid-feedback">Valid.</div>

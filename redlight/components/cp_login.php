@@ -2,13 +2,13 @@
 <section class="sec-filmes pb-5" id="lista-filmes">
     <div class="container px-lg-5 pt-3">
         <!-- Intro -->
-        <?php include_once "./components/cp_intro_login.php"; ?>
+        <?php include_once "../components/cp_intro_login.php"; ?>
         <div class="row">
             <!-- Coluna para o formulário -->
             <div class="col-md-6">
                 <h1>Insere os teus dados</h1>
                 <!-- Formulário de login -->
-                <form id="loginForm" action="./scripts/sc_login.php" method="post" class="needs-validation" novalidate>
+                <form id="loginForm" action="../scripts/sc_login.php" method="post" class="needs-validation" novalidate>
                     <div class="mb-3 mt-3">
                         <label for="login" class="form-label">Login:</label>
                         <input type="text" class="form-control" id="login" placeholder="Enter login" name="login" required>

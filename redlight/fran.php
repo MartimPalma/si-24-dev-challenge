@@ -4,7 +4,7 @@
 <!-- Navigation-->
 <?php include_once "./components/cp_navbar.php" ?>
 
-<!-- Generos -->
+<!-- francesinhas -->
 <?php include_once "./components/cp_lista_fran.php" ?>
 
 <!-- Rodapé -->

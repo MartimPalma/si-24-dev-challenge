@@ -7,7 +7,7 @@
 <!-- Header -->
 <?php include_once "./components/cp_header.php" ?>
 
-<!-- Filmes -->
+<!-- restaurantes -->
 <?php include_once "./components/cp_ultimos_restaurantes.php" ?>
 
 <!-- Rodapé -->

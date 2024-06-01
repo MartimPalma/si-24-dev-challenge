@@ -7,8 +7,6 @@
             <!-- Intro -->
             <?php include_once "./components/cp_intro_index.php"; ?>
 
-            <!-- Listar três filmes mais recentes -->
-
             <div class="row">
                 <?php
                 $link = new_db_connection();

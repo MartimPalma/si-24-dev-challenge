@@ -28,21 +28,23 @@ include_once "../../connections/connection.php";
                     echo "Erro ao atualizar a coluna 'deleted': " . mysqli_stmt_error($stmt);
                     header("Location: ../../restaurante.php");
                 }
+
             } else {
                 echo "Erro ao preparar a declaração: " . mysqli_stmt_error($stmt);
                 header("Location: ../../restaurante.php");
 
             }
 
-            // Feche a declaração
+            // Fechar a declaração
             mysqli_stmt_close($stmt);
+
         } else {
             echo "Erro ao iniciar a declaração: " . mysqli_error($link);
             header("Location: ../../restaurante.php");
 
         }
 
-        // Feche a conexão
+        // Fechar a conexão
         mysqli_close($link);
     } else {
         echo "Requisição inválida.";

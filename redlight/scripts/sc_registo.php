@@ -7,7 +7,8 @@
         $stmt = mysqli_stmt_init($link);
         $query = "INSERT INTO utilizadores (nome,email, login, password_hash) VALUES (?,?,?,?)";
 
-        echo $query;
+        //var_dump($query);
+
         if (mysqli_stmt_prepare($stmt, $query)) {
             $username = $_POST['name'];
             $email = $_POST['email'];

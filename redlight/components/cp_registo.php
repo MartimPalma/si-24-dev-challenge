@@ -1,7 +1,8 @@
+
 <section class="sec-filmes pb-5" id="lista-filmes">
     <div class="container px-lg-5 pt-3">
         <div class="row">
-            <?php include_once "./components/cp_intro_registo.php"; ?>
+            <?php include_once "../components/cp_intro_registo.php"; ?>
             <!-- Coluna para o formulário -->
             <div class="col-md-6">
                 <h1>Introduz os teus dados</h1>

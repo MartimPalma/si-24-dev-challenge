@@ -58,17 +58,19 @@
                 <section class="sec-filmes pb-5" id="lista-filmes">
                     <div class="container px-lg-5 pt-3">
                         <?php
-                        if (isset($_SERVER['HTTP_REFERER']) && !empty($_SERVER['HTTP_REFERER'])) {
-                            $previousPage = $_SERVER['HTTP_REFERER'];
-                        } else {
-                            $previousPage = "restaurante.php";
-                        }
+                            if (isset($_SERVER['HTTP_REFERER']) && !empty($_SERVER['HTTP_REFERER'])) {
+                                $previousPage = $_SERVER['HTTP_REFERER'];
+                            } else {
+                                $previousPage = "restaurante.php";
+                            }
                         ?>
+
                         <a class="btn btn-info mt-4" href="<?=$previousPage?>">Voltar</a>
+
                         <?php
-                        if (isset($_SESSION['ref_perfis']) && $_SESSION['ref_perfis'] == 1) {
-                            echo '<a class="btn btn-primary mt-4" href="update_restaurante.php?id=' . $id_restaurante . '">Editar</a>';
-                        }
+                            if (isset($_SESSION['ref_perfis']) && $_SESSION['ref_perfis'] == 1) {
+                                echo '<a class="btn btn-primary mt-4" href="update_restaurante.php?id=' . $id_restaurante . '">Editar</a>';
+                            }
                         ?>
                         <h1 class="pt-5 pb-3"><?= $nome ?></h1>
                         <div class="row d-flex flex-row justify-content-between">
@@ -85,13 +87,13 @@
                                         <div class="tipo-filme mb-0 small text-black-50 mt-3">
                                             <strong>Pontuação:</strong>
                                             <?php
-                                            for ($i = 0; $i < 5; $i++) {
-                                                if ($i < $pontuacao) {
-                                                    echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill text-warning" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73-3.522-3.356c-.33-.314-.158-.888.283-.95l4.898-.696 2.124-4.287c.197-.397.73-.397.927 0l2.124 4.287 4.898.696c.441.062.613.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>';
-                                                } else {
-                                                    echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star text-warning" viewBox="0 0 16 16"><path d="M2.866 14.85c-.078.443.36.79.746.592L8 13.187l4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.158-.888-.283-.95l-4.898-.696-2.124-4.287c-.197-.397-.73-.397-.927 0L6.178 3.88l-4.898.696c-.441.062-.613.636-.282.95l3.522 3.356-.83 4.73zM8 12.094l-3.686 1.896.7-3.978L2.184 6.74l4.027-.573L8 2.427l1.789 3.74 4.027.573-2.828 2.673.7 3.978L8 12.094z"/></svg>';
+                                                for ($i = 0; $i < 5; $i++) {
+                                                    if ($i < $pontuacao) {
+                                                        echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill text-warning" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73-3.522-3.356c-.33-.314-.158-.888.283-.95l4.898-.696 2.124-4.287c.197-.397.73-.397.927 0l2.124 4.287 4.898.696c.441.062.613.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>';
+                                                    } else {
+                                                        echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star text-warning" viewBox="0 0 16 16"><path d="M2.866 14.85c-.078.443.36.79.746.592L8 13.187l4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.158-.888-.283-.95l-4.898-.696-2.124-4.287c-.197-.397-.73-.397-.927 0L6.178 3.88l-4.898.696c-.441.062-.613.636-.282.95l3.522 3.356-.83 4.73zM8 12.094l-3.686 1.896.7-3.978L2.184 6.74l4.027-.573L8 2.427l1.789 3.74 4.027.573-2.828 2.673.7 3.978L8 12.094z"/></svg>';
+                                                    }
                                                 }
-                                            }
                                             ?>
                                         </div>
                                     </div>
@@ -116,13 +118,13 @@
                                                     <div class="tipo-filme mb-0 small text-black-50 mt-3">
                                                         <strong>Pontuação:</strong>
                                                         <?php
-                                                        for ($i = 0; $i < 5; $i++) {
-                                                            if ($i < $pontuacao) {
-                                                                echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill text-warning" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73-3.522-3.356c-.33-.314-.158-.888.283-.95l4.898-.696 2.124-4.287c.197-.397.73-.397.927 0l2.124 4.287 4.898.696c.441.062.613.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>';
-                                                            } else {
-                                                                echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star text-warning" viewBox="0 0 16 16"><path d="M2.866 14.85c-.078.443.36.79.746.592L8 13.187l4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.158-.888-.283-.95l-4.898-.696-2.124-4.287c-.197-.397-.73-.397-.927 0L6.178 3.88l-4.898.696c-.441.062-.613.636-.282.95l3.522 3.356-.83 4.73zM8 12.094l-3.686 1.896.7-3.978L2.184 6.74l4.027-.573L8 2.427l1.789 3.74 4.027.573-2.828 2.673.7 3.978L8 12.094z"/></svg>';
+                                                            for ($i = 0; $i < 5; $i++) {
+                                                                if ($i < $pontuacao) {
+                                                                    echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill text-warning" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73-3.522-3.356c-.33-.314-.158-.888.283-.95l4.898-.696 2.124-4.287c.197-.397.73-.397.927 0l2.124 4.287 4.898.696c.441.062.613.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>';
+                                                                } else {
+                                                                    echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star text-warning" viewBox="0 0 16 16"><path d="M2.866 14.85c-.078.443.36.79.746.592L8 13.187l4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.158-.888-.283-.95l-4.898-.696-2.124-4.287c-.197-.397-.73-.397-.927 0L6.178 3.88l-4.898.696c-.441.062-.613.636-.282.95l3.522 3.356-.83 4.73zM8 12.094l-3.686 1.896.7-3.978L2.184 6.74l4.027-.573L8 2.427l1.789 3.74 4.027.573-2.828 2.673.7 3.978L8 12.094z"/></svg>';
+                                                                }
                                                             }
-                                                        }
                                                         ?>
                                                     </div>
                                                 </div>

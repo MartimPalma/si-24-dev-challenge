@@ -13,6 +13,7 @@ include_once "../../connections/connection.php";
 
         // Preparar a query para atualizar os dados
         $query = "UPDATE restaurantes SET nome = ?, endereco = ?, descricao = ?, ref_cidades = ? WHERE id_restaurantes = ?";
+
         $stmt = mysqli_stmt_init($link);
 
         if (mysqli_stmt_prepare($stmt, $query)) {

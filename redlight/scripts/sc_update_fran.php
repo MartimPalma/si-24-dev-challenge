@@ -1,5 +1,5 @@
 <?php
-include_once "../connections/connection.php";
+    include_once "../connections/connection.php";
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id_francesinhas = $_POST['id_francesinhas'];
